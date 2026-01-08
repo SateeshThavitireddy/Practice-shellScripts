@@ -26,7 +26,7 @@ VALIDATE(){
         echo -e "$G $2 is completed successfully $N" | tee -a $LOG_FILE
     fi
 }
-cp mongodb.rep /etc/mongo.repo  &>>$LOG_FILE
+cp mongodb.repo /etc/yum.repos.d/mongo.repo  &>>$LOG_FILE
 VALIDATE $? "Copying Mongodb repo file"
 
 dnf install mongodb-org -y &>>$LOG_FILE
