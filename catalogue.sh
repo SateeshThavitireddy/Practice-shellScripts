@@ -10,7 +10,7 @@ LOGS_FOLDER="/var/log/shellscript"
 SCRIPT_NAME="$(echo $0 | cut -d "." -f1 )"
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 MONGODB_HOST="mongodb.cloncurry.fun"
-FILES_DIRECTORY=$(PWD)
+
 mkdir -p $LOGS_FOLDER
 echo -e "$G Starting the script execution $N" | tee -a $LOG_FILE
 
@@ -64,7 +64,7 @@ cd /app
 npm install &>>$LOG_FILE
 VALIDATE $? "Installing nodejs dependencies"
 
-cp FILES_DIRECTORY/catalogue.service /etc/systemd/system/catalogue.service
+cp ./catalogue.service /etc/systemd/system/catalogue.service
 VALIDATE $? "Copying catalogue systemd service file"
 
 systemctl daemon-reload &>>$LOG_FILE
