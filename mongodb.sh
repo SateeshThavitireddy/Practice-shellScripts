@@ -13,7 +13,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 echo -e "$R Starting the script execution $N" | tee -a $LOG_FILE
 
-if [ $USERID -eq 0 ]; then
+if [ $USERID -ne 0 ]; then
     echo -e "$R you cannot execute this script as root user $N" | tee -a $LOG_FILE
     exit 1
 fi
