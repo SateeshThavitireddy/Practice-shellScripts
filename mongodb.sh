@@ -10,7 +10,7 @@ LOGS_FOLDER="/var/log/shellscript"
 SCRIPT_NAME="$(echo $0 | cut -d "." -f1 )"
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
-mkdir -p $LOGS_FOLDER  &>>$LOG_FILE
+mkdir -p $LOGS_FOLDER
 echo -e "$R Starting the script execution $N" | tee -a $LOG_FILE
 
 if [ $USERID -eq 0 ]; then
