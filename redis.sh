@@ -12,7 +12,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 SCRIPT_DIRECTORY=$PWD
 
 mkdir -p $LOGS_FOLDER
-echo -e "$G Starting Frontend Setup... $N" | tee -a $LOG_FILE
+echo -e "$G Starting redis Setup... $N" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]; then
     echo -e "$R Please run as root or use sudo. $N" | tee -a $LOG_FILE
