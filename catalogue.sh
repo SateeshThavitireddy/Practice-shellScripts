@@ -64,7 +64,7 @@ cd /app
 npm install &>>$LOG_FILE
 VALIDATE $? "Installing nodejs dependencies"
 
-cp FILES_DIRECTORY/catalogue.service /etc/systemd/system/catalogue.service
+cp $FILES_DIRECTORY/catalogue.service /etc/systemd/system/catalogue.service
 VALIDATE $? "Copying catalogue systemd service file"
 
 systemctl daemon-reload &>>$LOG_FILE
