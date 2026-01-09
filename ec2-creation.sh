@@ -18,7 +18,7 @@ do
         RECORD_NAME="$DOMAIN_NAME" # daws86s.fun
     fi
 
-    echo "$instance: $IP"
+    echo "$instance Public : $(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)"
 
     aws route53 change-resource-record-sets \
     --hosted-zone-id $ZONE_ID \
