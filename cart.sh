@@ -12,7 +12,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 SCRIPT_DIRECTORY=$PWD
 
 mkdir -p $LOGS_FOLDER
-echo -e "$G Starting User Setup... $N" | tee -a $LOG_FILE
+echo -e "$G Starting Cart Setup... $N" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]; then
     echo -e "$R Please run as root or use sudo. $N" | tee -a $LOG_FILE
@@ -63,6 +63,9 @@ curl -L -o /tmp/cart.zip https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip
 VALIDATE $? "Downloading cart application code"
 
 cd /app &>>$LOG_FILE
+
+rm -rf /app/* &>>$LOG_FILE
+VALIDATE $? "Cleaning /app directory"
 
 unzip /tmp/cart.zip &>>$LOG_FILE
 VALIDATE $? "Extracting cart application code"
