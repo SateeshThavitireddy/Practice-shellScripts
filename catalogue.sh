@@ -81,8 +81,8 @@ VALIDATE $? "Copying Mongodb repo file"
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? "Installing Mongodb client"
 
-mongosh --host MONGODB_HOST </app/db/master-data.js
+mongosh --host $MONGODB_HOST </app/db/master-data.js
 VALIDATE $? "Loading catalogue schema to Mongodb"
 
-mongosh --host MONGODB_HOST --eval "use catalogue; db.products.findOne()"
+mongosh --host $MONGODB_HOST --eval "use catalogue; db.products.findOne()"
 VALIDATE $? "Validating catalogue schema load"
