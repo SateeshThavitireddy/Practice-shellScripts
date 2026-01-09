@@ -75,6 +75,9 @@ cd /app
 npm install &>>$LOG_FILE
 VALIDATE $? "Installing Node.js dependencies for user application"
 
+cp $SCRIPT_DIRECTORY/user.service /etc/systemd/system/user.service &>>$LOG_FILE
+VALIDATE $? "Copying user systemd service file"
+
 systemctl daemon-reload &>>$LOG_FILE
 VALIDATE $? "Reloading systemd daemon"
 
