@@ -8,7 +8,7 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shellscript"
 SCRIPT_NAME="$(echo $0 | cut -d "." -f1 )"
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 SCRIPT_DIRECTORY=$PWD
 
 mkdir -p $LOGS_FOLDER
