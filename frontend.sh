@@ -66,7 +66,7 @@ VALIDATE $? "Clean Nginx HTML Folder"
 unzip /tmp/frontend.zip &>>$LOG_FILE
 VALIDATE $? "Extract Frontend Artifact"
 
-cp $SCRIPT_DIRECTORY/nginx.config  /etc/nginx/nginx.conf    &>>$LOG_FILE
+cp $SCRIPT_DIRECTORY/nginx.conf /etc/nginx/nginx.conf    &>>$LOG_FILE
 VALIDATE $? "Copy Nginx Configuration"
 
 systemctl restart nginx &>>$LOG_FILE        
