@@ -10,7 +10,7 @@ LOGS_FOLDER="/var/log/shellscript"
 SCRIPT_NAME="$(echo $0 | cut -d "." -f1 )"
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 MONGODB_HOST="mongodb.cloncurry.fun"
-FILES_DIRECTORY=$(pwd)
+FILES_DIRECTORY=$PWD
 mkdir -p $LOGS_FOLDER
 echo -e "$G Starting the script execution $N" | tee -a $LOG_FILE
 
